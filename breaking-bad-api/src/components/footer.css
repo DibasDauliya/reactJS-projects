@@ -1,0 +1,14 @@
+#main-footer {
+  text-align: center;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+p {
+  margin: 0 auto;
+}
+hr {
+  width: 70%;
+  color: rgb(83, 80, 80);
+  margin: 10px auto;
+}

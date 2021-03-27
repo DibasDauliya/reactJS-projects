@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+.grid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  gap: 1rem;
+}
+
+div {
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+}
+
+div > p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+}
+
+.card {
+  position: relative;
+  overflow: none;
+  cursor: context-menu;
+}
+
+.card .card-back {
+  position: absolute;
+  top: 20%;
+  transform: translateX(50) translateY(-50);
+  padding: 10px;
+  visibility: hidden;
+}
+
+.card .card-front {
+  transition: transform 0.2s ease-in, opacity 0.1s ease-in-out;
+}
+
+.card:hover .card-front {
+  opacity: 0.5;
+  transform: scale(1.04);
+}
+.card:hover .card-back {
+  visibility: visible;
+}
+
+.card-back ul {
+  list-style-type: none;
+  color: #fff;
+  margin: 1rem auto;
+}

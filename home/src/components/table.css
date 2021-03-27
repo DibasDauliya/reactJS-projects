@@ -1,0 +1,17 @@
+table {
+  margin: 0 auto;
+  /* width: 100%; */
+  border: 2px solid #ccc;
+  border-collapse: collapse;
+  text-align: left;
+  padding: 50px;
+}
+
+thead,
+tbody,
+tr,
+td,
+th {
+  border: inherit;
+  padding: 20px;
+}
