@@ -5,8 +5,9 @@ export default function Data() {
   const data = [
     {
       name: "Breaking Bad API Practice",
-      link: "hihi",
-      repo: "hihi",
+      link: "https://loving-ride-3e12ef.netlify.app/",
+      repo:
+        "https://github.com/DibasDauliya/reactJS-projects/tree/main/breaking-bad-api",
     },
     {
       name: "Breaking Bad API Practice",

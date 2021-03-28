@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Card from "./components/Card";
 
 function App() {
+  const [data, setData] = useState([]);
+  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await axios.get(
+        `https://jsonplaceholder.typicode.com/users`
+      );
+
+      setData(data.data);
+    };
+    getData();
+  }, []);
+
+  function onChange(q) {
+    setValue(q, () => console.log(value));
+    console.log(value);
+    // let newData = data.filter((dta) =>
+    //   dta.name.toLowerCase().includes(value.toLowerCase())
+    // );
+    // setData(newData);
+    // console.log(newData);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
+      <Card data={data} />
     </div>
   );
 }
