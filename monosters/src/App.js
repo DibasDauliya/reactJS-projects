@@ -5,6 +5,8 @@ import Card from "./components/Card";
 
 function App() {
   const [data, setData] = useState([]);
+  // this will not change, so we filter data properly
+  const [adata, setaData] = useState([]);
   const [value, setValue] = useState("");
 
   useEffect(() => {
@@ -14,22 +16,28 @@ function App() {
       );
 
       setData(data.data);
+
+      // this will not change
+      setaData(data.data);
     };
     getData();
   }, []);
 
   function onChange(q) {
-    setValue(q, () => console.log(value));
-    console.log(value);
-    // let newData = data.filter((dta) =>
-    //   dta.name.toLowerCase().includes(value.toLowerCase())
-    // );
-    // setData(newData);
-    // console.log(newData);
+    setValue(q);
+    let newData = adata.filter((dta) =>
+      dta.name.toLowerCase().includes(q.toLowerCase())
+    );
+
+    setData(newData);
+
+    console.log(newData);
   }
   return (
     <div className="container">
       <input
+        placeholder="Enter the name you wanna filter"
+        style={{ padding: "5px 7px", width: "70%", fontSize: "1.2rem" }}
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
