@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
@@ -12,14 +13,24 @@ code {
     monospace;
 }
 
-.card {
-  border-radius: 5px;
-  border: 2px solid #ccc;
-  margin: 1rem auto;
-  cursor: pointer;
-  width: 500px;
+p {
+  max-width: 80ch;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.dot {
-  margin-left: 1rem;
+.form {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  bottom: 3rem;
+  /* left: 50%; */
+  transform: translateX(-50%);
+  background: rgb(197, 192, 192);
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  border-radius: 2px;
+  text-transform: capitalize;
 }

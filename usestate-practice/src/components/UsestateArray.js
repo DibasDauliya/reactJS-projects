@@ -32,7 +32,7 @@ export default function UsestateArray() {
   };
 
   const addButton = () => {
-    addedData.name | addedData.age | addedData.status
+    addedData.name && addedData.age && addedData.status
       ? setData([...dataa, addedData])
       : console.log("add data");
     setAddedData({ ...addedData, id: Date.now() });
@@ -40,19 +40,22 @@ export default function UsestateArray() {
 
   return (
     <div>
-      <div className="card">
+      <div className="card" style={{ padding: "15px" }}>
         <input
           type="text"
+          placeholder="Enter name"
           value={addedData.name}
           onChange={(e) => setAddedData({ ...addedData, name: e.target.value })}
         />
         <input
           type="number"
+          placeholder="Enter number"
           value={addedData.age}
           onChange={(e) => setAddedData({ ...addedData, age: e.target.value })}
         />
         <input
           type="text"
+          placeholder="Enter status"
           value={addedData.status}
           onChange={(e) =>
             setAddedData({ ...addedData, status: e.target.value })

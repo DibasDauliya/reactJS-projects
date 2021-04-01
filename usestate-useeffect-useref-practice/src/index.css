@@ -5,21 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.card {
-  border-radius: 5px;
-  border: 2px solid #ccc;
-  margin: 1rem auto;
-  cursor: pointer;
-  width: 500px;
-}
-
-.dot {
-  margin-left: 1rem;
+main {
+  overflow-y: auto;
 }

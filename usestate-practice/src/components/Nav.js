@@ -6,13 +6,18 @@ export default function Nav() {
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Home</Link> <span className="dot">•</span>
         </li>
         <li>
-          <Link to="/UsestateArray">useState (Array)</Link>
+          <Link to="/UsestateArray">useState (Array)</Link>{" "}
+          <span className="dot">•</span>
         </li>
         <li>
-          <Link to="/UsestateObjects">useState (Objects)</Link>
+          <Link to="/UsestateObjects">useState (Objects)</Link>{" "}
+          <span className="dot">•</span>
+        </li>
+        <li>
+          <Link to="/Counter">Simple Counter</Link>
         </li>
       </ul>
     </nav>
