@@ -6,6 +6,8 @@ import { Practice } from "./components/Practice";
 
 const Home = () => <h1>Welcome to the Sweet Home!</h1>;
 
+const NotFound = () => <h1>Not found</h1>;
+
 function App() {
   return (
     <Router>
@@ -38,6 +40,7 @@ function App() {
           /> */}
         </Route>
         <Route path="/practice1" component={Practice} />
+        <Route path="*" component={NotFound} />
       </Switch>
     </Router>
   );
