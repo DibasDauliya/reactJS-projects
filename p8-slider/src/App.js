@@ -4,7 +4,24 @@ import { FaQuoteRight } from "react-icons/fa";
 import data from "./data";
 function App() {
   const [items, setItems] = useState(data);
-  const [index, setIntex] = useState(0);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    let lastIndex = items.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, items]);
+
+  useEffect(() => {
+    let interval = setInterval(() => {
+      setIndex(index + 1);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [index]);
   return (
     <section className="section">
       <div className="title">
@@ -13,10 +30,17 @@ function App() {
         </h2>
       </div>
       <div className="section-center">
-        {items.map((item, index) => {
+        {items.map((item, idx) => {
           const { id, image, name, title, quote } = item;
+          let className = "nextSlide";
+          if (idx === index) {
+            className = "activeSlide";
+          }
+          if (idx === index - 1 || (index === 0 && idx === items.length - 1)) {
+            className = "lastSlide";
+          }
           return (
-            <article key={id}>
+            <article key={id} className={className}>
               <img src={image} alt={name} className="person-img" />
               <p className="title">{title}</p>
               <p className="text">{quote}</p>
@@ -24,10 +48,10 @@ function App() {
             </article>
           );
         })}
-        <button className="prev">
+        <button className="prev" onClick={() => setIndex(index - 1)}>
           <FiChevronLeft />
         </button>
-        <button className="next">
+        <button className="next" onClick={() => setIndex(index + 1)}>
           <FiChevronRight />
         </button>
       </div>
