@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import List from './List'
-import Alert from './Alert'
+import React, { useState, useEffect } from "react";
+import List from "./List";
+import Alert from "./Alert";
 
 function App() {
-  return <h2>grocery bud setup</h2>
+  return (
+    <section>
+      <div className="title">
+        <h3>grocery bud</h3>
+      </div>
+    </section>
+  );
 }
 
-export default App
+export default App;
